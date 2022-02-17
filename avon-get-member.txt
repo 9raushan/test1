@@ -1,0 +1,42 @@
+$Report=@()
+$members = Get-ADGroupMember -Identity "g_BUA_APPFinance_RecaudaV2000_F" -Server "sa.avonet.net"
+$count= ($members| Measure-Object).Count
+foreach ($mem in $members)
+{
+Get-ADUser -Identity $mem -Properties * | % {
+$out=New-Object PSObject
+$Out | Add-Member -MemberType noteproperty -Name ‘Name’ -Value $_.name
+$out |Add-Member -MemberType NoteProperty -Name 'DistinguishedName' -Value $_.distinguishedName
+$Out | Add-Member -MemberType noteproperty -Name ‘Object Name’ -Value $_.objectClass
+$Out | Add-Member -MemberType noteproperty -Name ‘SamAccountName’ -Value $_.SamAccountName
+$Out | Add-Member -MemberType noteproperty -Name ‘Group Name’ -Value "9_BUA_APPFinance_RecaudaV2000_F"
+}
+$Report += $Out
+}
+$Report | FT -AutoSize |Out-File -FilePath  "C:\Users\administrator.DEMO.000\Desktop\z.txt" -Append
+$Value= "Total number of user in group are:   $count           "
+Add-Content -Value $Value -Path "C:\Users\administrator.DEMO.000\Desktop\z.txt"
+
+#### Modified Script ##############
+
+$Report=@()
+$groupName= Read-Host "Enter the group name"
+# $server= Read-Host "Enter the server code"
+#$members = Get-ADGroupMember -Identity $groupName -Server "$server.avonet.net"
+$members = Get-ADGroupMember -Identity $groupName -Server "sa.avonet.net"
+$count= ($members| Measure-Object).Count
+foreach ($mem in $members)
+{
+Get-ADUser -Identity $mem -Properties * | % {
+$out=New-Object PSObject
+$Out | Add-Member -MemberType noteproperty -Name ‘Name’ -Value $_.name
+$out |Add-Member -MemberType NoteProperty -Name 'DistinguishedName' -Value $_.distinguishedName
+$Out | Add-Member -MemberType noteproperty -Name ‘Object Name’ -Value $_.objectClass
+$Out | Add-Member -MemberType noteproperty -Name ‘SamAccountName’ -Value $_.SamAccountName
+$Out | Add-Member -MemberType noteproperty -Name ‘Group Name’ -Value "9_BUA_APPFinance_RecaudaV2000_F"
+}
+$Report += $Out
+}
+$Report | FT -AutoSize |Out-File -FilePath  "C:\Users\administrator.DEMO.000\Desktop\z.txt" -Append
+$Value= "Total number of user in group are:   $count           "
+Add-Content -Value $Value -Path "C:\Users\administrator.DEMO.000\Desktop\z.txt"
