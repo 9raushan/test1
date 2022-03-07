@@ -1,0 +1,7 @@
+ID, Work Item Type,Title,Task Status,Assigned To,State ,Effort per execution,Executions per month,DWP Work Load,Area Path,Iteration Path,Category
+,User Story,User offboarding,Deployed,,New,50,650,6.07,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Ticketed
+,User Story,Create/Disable Service Account,Testing,,New,15,55,0.51,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Ticketed
+,User Story,Service Account Password Notification,Testing,,New,60,96,0.9,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Ticketed
+,User Story,Add bulk computers to a domain,Testing,,New,15,65,0.54,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Non Ticketed
+,User Story,Lock Sharepoint Onprem sites,Deployed,,New,,,,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Non Ticketed
+,User Story,BF Health Check,Testing,,New,,,,DWP NORAM3\DWP NORAM3_AVON,DWP NORAM3\DWP NORAM3_AVON,Ticketed
